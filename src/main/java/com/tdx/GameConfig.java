@@ -7,12 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Game configuration constants and wave definitions.
- * Keeps wave data and game constants centralized and organized, fr fr.
+ * Stores game settings and wave data.
+ * Game settingsw and wave data. 
  */
 public class GameConfig {
 
-    /** Game path that bloons follow - the journey from start to finish. */
+    /** Game path that bloons follow, the journey from start to finish. */
     public static final List<Point2D> PATH = List.of(
             new Point2D(120, 990),
             new Point2D(432, 990),
