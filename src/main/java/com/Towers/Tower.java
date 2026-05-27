@@ -76,14 +76,13 @@ public abstract class Tower {
     protected void refreshView() {
         view.setRadius((baseRadius + (level - 1) * 3) * scale);
         view.setStrokeWidth((1 + level * 0.5) * scale);
-        // Update tower color brightness to indicate upgrade
+        // Update tower color brightness to show upgrade
         Color current = (Color) view.getFill();
         double brightness = 0.2 + (level - 1) * 0.15;
         view.setFill(current.interpolate(Color.WHITE, brightness));
     }
 
     protected void onUpgrade() {
-        // Override in subclasses to apply specific bonuses.
     }
 
     public abstract void update(double elapsedSeconds, List<Bloon> bloons, List<Projectile> projectiles);
