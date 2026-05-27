@@ -46,7 +46,7 @@ public class BasicCliffTower extends CliffTower {
 
     @Override
     protected void onUpgrade() {
-        // cliff archer increases range slightly each level as well
+        // cliff archer increases range slightly each level.
         range += 10;
     }
 }
