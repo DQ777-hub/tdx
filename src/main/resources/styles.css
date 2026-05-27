@@ -1,0 +1,138 @@
+/* TDX Tower Defense - Game Styles */
+
+/* ============== TITLE SCREEN ============== */
+
+.title-container {
+    -fx-background-color: linear-gradient(to bottom, #1a1a1a, #2d5a2d);
+}
+
+.title-label {
+    -fx-font-size: 72;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffdd00;
+}
+
+.subtitle-label {
+    -fx-font-size: 24;
+    -fx-text-fill: #ffffff;
+}
+
+.instruction-label {
+    -fx-font-size: 18;
+    -fx-text-fill: #cccccc;
+}
+
+.primary-button {
+    -fx-font-size: 24;
+    -fx-padding: 20 60 20 60;
+    -fx-background-color: #00aa00;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+.exit-button {
+    -fx-font-size: 16;
+    -fx-padding: 10 40 10 40;
+    -fx-background-color: #aa0000;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+/* ============== GAMEPLAY SCREEN ============== */
+
+.playfield {
+    -fx-background-color: linear-gradient(to bottom, #2b8c2b, #1b5e1b);
+}
+
+.stats-box {
+    -fx-background-color: rgba(0, 0, 0, 0.4);
+    -fx-border-color: #ffffff33;
+    -fx-border-width: 1;
+}
+
+.status-label {
+    -fx-font-size: 16;
+    -fx-text-fill: #ffffff;
+    -fx-wrap-text: true;
+    -fx-max-width: 200;
+}
+
+.button-inactive {
+    -fx-background-color: #555555;
+    -fx-text-fill: #ffffff;
+}
+
+.button-active {
+    -fx-background-color: #00aa00;
+    -fx-text-fill: #ffffff;
+}
+
+.speed-button {
+    -fx-background-color: #555555;
+    -fx-text-fill: #ffffff;
+}
+
+.autoskip-button {
+    -fx-background-color: #555555;
+    -fx-text-fill: #ffffff;
+}
+
+/* ============== UPGRADE PANEL ============== */
+
+.upgrade-panel {
+    -fx-border-color: #ffaa00;
+    -fx-border-width: 1;
+    -fx-background-color: rgba(50, 30, 0, 0.6);
+}
+
+.upgrade-button {
+    -fx-font-size: 12;
+}
+
+.upgrade-title-label {
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffaa00;
+}
+
+.upgrade-stats-label {
+    -fx-font-size: 12;
+    -fx-text-fill: #cccccc;
+    -fx-wrap-text: true;
+    -fx-max-width: 200;
+}
+
+/* ============== WIN SCREEN ============== */
+
+.win-container {
+    -fx-background-color: linear-gradient(to bottom, #1a2e1a, #2d5a2d);
+}
+
+.win-label {
+    -fx-font-size: 64;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffdd00;
+}
+
+.win-stats-label {
+    -fx-font-size: 20;
+    -fx-text-fill: #ffffff;
+    -fx-alignment: center;
+    -fx-wrap-text: true;
+}
+
+.success-button {
+    -fx-font-size: 24;
+    -fx-padding: 20 60 20 60;
+    -fx-background-color: #00aa00;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+.danger-button {
+    -fx-font-size: 16;
+    -fx-padding: 10 40 10 40;
+    -fx-background-color: #aa0000;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
