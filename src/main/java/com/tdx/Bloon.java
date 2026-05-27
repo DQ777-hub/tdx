@@ -43,7 +43,7 @@ public class Bloon {
         this.view.setStrokeWidth(2 * scale);
     }
 
-    // Constructor for backward compatibility
+    // Old Constructor
     public Bloon(List<Point2D> path, double speed, int health, double scale) {
         this(path, speed, health, scale, BloonType.RED);
     }
