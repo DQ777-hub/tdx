@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Main game controller - handles UI, logic, waves, and tower placement. No cap.
+ * Main game controller - handles UI, logic, waves, and tower placement.
  */
 public class Main extends Application {
     private PaneWrapper playfield;
@@ -103,8 +103,7 @@ public class Main extends Application {
     private List<String> gameplayTracks = new ArrayList<>();
 
     /**
-     * Load all sounds - pop, title music, and gameplay tracks. It's giving audio
-     * excellence, fr.
+     * Load all sounds - pop, title music, and gameplay tracks.
      */
     private void loadSounds() {
         try {
@@ -146,7 +145,7 @@ public class Main extends Application {
         }
     }
 
-    /** Play title music on loop - vibe check passed, no cap. */
+    /** Play title music on loop - vibe check passed */
     private void playTitleMusic() {
         if (titleMusic != null) {
             titleMusic.setCycleCount(AudioClip.INDEFINITE);
@@ -154,14 +153,14 @@ public class Main extends Application {
         }
     }
 
-    /** Stop title music - time to get into the action, slay. */
+    /** Stop title music - time to get into the action.*/
     private void stopTitleMusic() {
         if (titleMusic != null) {
             titleMusic.stop();
         }
     }
 
-    /** Play random gameplay music track, fr fr. */
+    /** Play random gameplay music track. */
     private void playGameplayMusic() {
         if (!gameplayTracks.isEmpty()) {
             currentGameplayTrack = new Random().nextInt(gameplayTracks.size());
@@ -172,21 +171,21 @@ public class Main extends Application {
         }
     }
 
-    /** Stop gameplay music - silence before victory, periodt. */
+    /** Stop gameplay music - silence before victory. */
     private void stopGameplayMusic() {
         if (gameplayMusic != null) {
             gameplayMusic.stop();
         }
     }
 
-    /** Stop all music when game ends - moment of silence before reflection, fr. */
+    /** Stop all music when game ends - moment of silence before reflection. */
     private void stopAllMusic() {
         stopTitleMusic();
         stopGameplayMusic();
     }
 
     /**
-     * Play pop sound - hits different when bloons destroyed, chef's kiss energy.
+     * Play pop sound - hits different when bloons destroyed.
      */
     private void playPopSound() {
         if (popSound != null) {
@@ -200,14 +199,13 @@ public class Main extends Application {
     private int currentCompositionIndex = 0;
     private int spawnedFromComposition = 0;
 
-    /** Entry point - lowkey where the magic starts, fr fr. */
+    /** Entry point - lowkey where the magic starts. */
     public static void main(String[] args) {
         launch();
     }
 
     /**
-     * Setup stage and show title screen - lowkey the gateway to the gaming
-     * experience.
+     * Setup stage and show title screen.
      */
     @Override
     public void start(Stage stage) {
@@ -219,7 +217,7 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-    /** Show title screen - where players get hyped. The aesthetic? Immaculate. */
+    /** Show title screen. */
     private void showTitleScreen() {
         loadSounds();
         playTitleMusic();
@@ -263,8 +261,7 @@ public class Main extends Application {
     }
 
     /**
-     * Setup playfield, buttons, labels, and animation loop - main character energy,
-     * slay.
+     * Setup playfield, buttons, labels, and animation loop.
      */
     private void startGame() {
         gameState = GameState.PLAYING;
@@ -343,7 +340,7 @@ public class Main extends Application {
         playfield.setOnMouseMoved(event -> updatePreview(event));
         playfield.setOnMouseClicked(event -> handleClick(event.getX(), event.getY()));
 
-        // Setup tower preview nodes before listeners are triggered
+        // Setup tower preview nodes
         towerPreview.setStroke(Color.YELLOW);
         towerPreview.setStrokeWidth(2);
         towerPreview.setFill(Color.color(1, 1, 1, 0.14));
@@ -384,7 +381,7 @@ public class Main extends Application {
     }
 
     /**
-     * Create styled UI label - white text on dark bg? Absolutely immaculate, fr.
+     * Create styled UI label - white text on dark bg
      */
     private Label createStatusLabel(String text) {
         Label label = new Label(text);
@@ -395,8 +392,7 @@ public class Main extends Application {
     }
 
     /**
-     * Create upgrade panel - shows tower stats and upgrade options, hits different,
-     * slay.
+     * Create upgrade panel - shows tower stats and upgrade options
      */
     private VBox createUpgradePanel() {
         upgradeTitleLabel = new Label("No tower selected");
@@ -424,8 +420,7 @@ public class Main extends Application {
     }
 
     /**
-     * Update scaling based on playfield size - responsive design that's bussin', no
-     * cap.
+     * Update scaling based on playfield size - responsive design 
      */
     private void updateScaling() {
         scaleX = playfield.getWidth() / GameConfig.BASE_WIDTH;
@@ -439,8 +434,7 @@ public class Main extends Application {
     }
 
     /**
-     * Get scaled path - keeps bloon path perfect at any resolution, lowkey
-     * essential.
+     * Get scaled path - keeps bloon path perfect at any resolution
      */
     private List<Point2D> getScaledPath() {
         if (scaledPath == null) {
@@ -450,8 +444,7 @@ public class Main extends Application {
     }
 
     /**
-     * Redraw entire scene - clearing and refreshing everything is chef's kiss every
-     * time.
+     * Redraw entire scene - clearing and refreshing everything
      */
     private void redrawGame() {
         playfield.getChildren().clear();
@@ -477,7 +470,7 @@ public class Main extends Application {
     }
 
     /**
-     * Draw bloon path - the golden road where they travel. The path is life, fr.
+     * Draw bloon path - the golden road where they travel. 
      */
     private void drawPath() {
         List<Point2D> scaledPath = getScaledPath();
@@ -493,8 +486,7 @@ public class Main extends Application {
     }
 
     /**
-     * Draw spawn area - cool zone where bloons pop out. Styling is immaculate, no
-     * cap.
+     * Draw spawn area - cool zone where bloons pop out.
      */
     private void drawSpawnArea() {
         List<Point2D> scaledPath = getScaledPath();
@@ -508,8 +500,7 @@ public class Main extends Application {
     }
 
     /**
-     * Start tower placement mode - showing preview of where tower goes. Chef's
-     * kiss, slay.
+     * Start tower placement mode - showing preview of where tower goes. 
      */
     private void startTowerPlacement(TowerType towerType) {
         int cost = 0;
@@ -568,8 +559,7 @@ public class Main extends Application {
     }
 
     /**
-     * Update tower preview on mouse move - real-time feedback that's bussin', no
-     * lie.
+     * Update tower preview on mouse move - real-time feedback
      */
     private void updatePreview(javafx.scene.input.MouseEvent event) {
         if (!placingTower) {
@@ -611,8 +601,7 @@ public class Main extends Application {
     }
 
     /**
-     * Handle click - decides if placing or selecting tower. Gatekeeper with
-     * precision, fr.
+     * Handle click - decides if placing or selecting tower.
      */
     private void handleClick(double sceneX, double sceneY) {
         if (gameOver) {
@@ -633,8 +622,7 @@ public class Main extends Application {
     }
 
     /**
-     * Try to select tower - essential for upgrades and works flawlessly, lowkey
-     * fire.
+     * Try to select tower - essential for upgrades
      */
     private boolean trySelectTower(double sceneX, double sceneY) {
         for (Tower tower : towers) {
@@ -649,8 +637,7 @@ public class Main extends Application {
     }
 
     /**
-     * Select tower and update upgrade panel - shows what tower can become. Info
-     * display? Immaculate.
+     * Select tower and update upgrade panel - shows what tower can become.
      */
     private void selectTower(Tower tower) {
         selectedTower = tower;
@@ -719,8 +706,7 @@ public class Main extends Application {
     }
 
     /**
-     * Perform upgrade - check money, apply, and refresh UI. Upgrades hit different,
-     * slay.
+     * Perform upgrade - check money, apply, and refresh UI.
      */
     private void doUpgrade() {
         if (selectedTower == null || !selectedTower.canUpgrade()) {
@@ -739,8 +725,7 @@ public class Main extends Application {
     }
 
     /**
-     * Attempt to build tower - check valid placement, deduct money, add tower. Main
-     * character energy.
+     * Attempt to build tower - check valid placement, deduct money, add tower.
      */
     private void attemptBuild(double sceneX, double sceneY) {
         if (!placingTower || gameOver) {
@@ -788,8 +773,7 @@ public class Main extends Application {
     }
 
     /**
-     * Validate tower placement - check bounds, path, terrain, and spacing. Heavy
-     * lifting, periodt.
+     * Validate tower placement - check bounds, path, terrain, and spacing.
      */
     private boolean canPlaceTower(double x, double y, TowerSurface surface) {
         // Check bounds within playfield with small margin
@@ -821,7 +805,7 @@ public class Main extends Application {
         return true;
     }
 
-    /** Check if point is on bloon path - sacred zone we gotta respect, fr. */
+    /** Check if point is on bloon path  */
     private boolean isOnPath(double x, double y) {
         List<Point2D> scaledPath = getScaledPath();
         for (int i = 0; i < scaledPath.size() - 1; i++) {
@@ -836,8 +820,7 @@ public class Main extends Application {
     }
 
     /**
-     * Check if in cliff area - special zone where cliff towers belong. Mechanics
-     * slap, fr.
+     * Check if in cliff area - special zone where cliff towers belong. 
      */
     private boolean isCliffArea(double x, double y) {
         double minX = 20 * scaleX;
@@ -848,10 +831,8 @@ public class Main extends Application {
     }
 
     /**
-     * Draws the cliff area on the playfield. It's that beautiful cyan rectangle
-     * that shows
-     * where cliff towers belong. The aesthetic is immaculate and the visual
-     * communication is chef's kiss.
+     * Draws the cliff area on the playfield. 
+     * where cliff towers belong. 
      */
     private void drawCliffArea() {
         Rectangle cliffArea = new Rectangle(20 * scaleX, 20 * scaleY, 240 * scaleX, 160 * scaleY);
@@ -863,9 +844,8 @@ public class Main extends Application {
 
     /**
      * Calculates the shortest distance from a point to a line segment.
-     * Used for path collision detection. Lowkey this is some mathematical
-     * excellence right here,
-     * and it's absolutely essential for the game to work correctly, no cap.
+     * Used for path collision detection. 
+     * and it's absolutely essential for the game to work correctly, 
      *
      * @param px    the X coordinate of the point
      * @param py    the Y coordinate of the point
@@ -893,8 +873,6 @@ public class Main extends Application {
      * loads the wave
      * composition, and starts spawning bloons on a timer. When a new wave starts,
      * the intensity
-     * goes up and it's absolutely bussin' - this is where the real challenge
-     * begins, fr fr.
      */
     private void spawnNextWave() {
         if (gameOver || gameWon) {
@@ -935,12 +913,10 @@ public class Main extends Application {
     }
 
     /**
-     * Updates the game state each frame. This is the heartbeat of the entire game -
-     * it handles
+     * Updates the game state each frame. 
      * bloon movement, tower firing, projectile updates, and wave progression. This
      * method is
-     * absolutely essential and it's doing all the heavy lifting. Lowkey the unsung
-     * hero, fr fr.
+     * absolutely essential and it's doing all the work. 
      *
      * @param elapsedSeconds the time elapsed since the last frame
      */
@@ -1063,7 +1039,7 @@ public class Main extends Application {
      * wave number,
      * and farm income all get refreshed. Lowkey this method is essential for
      * keeping players
-     * informed about what's happening - it's giving transparency energy, periodt.
+     * informed about what's happening.
      */
     private void updateLabels() {
         moneyLabel.setText("Money: " + money);
@@ -1076,7 +1052,7 @@ public class Main extends Application {
      * Toggles the game speed between normal (1x) and double speed (2x).
      * This is for the players who want to speed run the waves or just need a
      * faster-paced experience.
-     * When enabled, it absolutely hits different and the tension goes up, fr fr.
+     * When enabled
      */
     private void toggleSpeed() {
         gameSpeed = (gameSpeed == 1.0) ? 2.0 : 1.0;
@@ -1093,9 +1069,7 @@ public class Main extends Application {
     /**
      * Toggles the auto-skip feature which automatically starts the next wave when
      * the current
-     * one completes. For players who want a non-stop action experience, this is
-     * absolutely bussin'.
-     * Lowkey this feature is peak convenience, no cap.
+     * one completes. For players who want a non-stop action experience
      */
     private void toggleAutoSkip() {
         autoSkipEnabled = !autoSkipEnabled;
@@ -1110,8 +1084,7 @@ public class Main extends Application {
     }
 
     /**
-     * End game when lives = 0 - gut punch but comeback is satisfying. That's the
-     * vibe.
+     * End game when lives = 0 
      */
     private void endGame() {
         gameOver = true;
