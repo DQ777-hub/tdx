@@ -5,7 +5,7 @@ import javafx.scene.shape.Rectangle;
 
 /**
  * Custom pane with clipping support for the game playfield.
- * Ensures game content stays within bounds - keeps it immaculate, fr.
+ * Ensures game content stays within bounds
  */
 public class PaneWrapper extends Pane {
     private Rectangle clipRect;
